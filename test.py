@@ -13,5 +13,7 @@ if a == b and a == b and a == b:
 for _ in range(10):
         if np.all(b.c.d[:, :, :, : -1] > 240):
             f.g(20, True)
+        if np.all(b.c.d[:, :, :, :, : -1] > 240):
+            f.g(20, True)
         else:
             break
