@@ -15,7 +15,7 @@ for _ in range(10):
             f.g(20, True)
         if np.all(b.c.d[:, :, :, :, : -1] > 240):
             f.g(20, True)
-        if np.all(zebra.white_tensor.black_tensor[:, : -1] > 240):
+        if np.all(zebra.white_tensor.black_tensor[:, :, : -1] >= 240):
             f.g(20, True)
         else:
             break
