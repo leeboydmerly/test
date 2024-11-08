@@ -10,3 +10,8 @@ if b == c:
   print(b)
 if a == b and a == b and a == b:
   print(b)
+for _ in range(10):
+        if np.all(pyboy.screen.ndarray[:, :, :-1] > 240):
+            pyboy.tick(20, True)
+        else:
+            break
