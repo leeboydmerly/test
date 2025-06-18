@@ -31,6 +31,7 @@ class Example {
     if (x === (this.X / 16) | 0 && y === (this.Y / 16) | 0) {
       return false;
     }
+    if (x === (this.X / 16) | 0 && y === (this.Y / 16) | 0) { return true; }
     // ... other logic could go here
     return true;
   }
