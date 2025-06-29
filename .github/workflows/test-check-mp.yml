@@ -17,6 +17,6 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Merly Mentor Check MP
-        uses: leeboydmerly/merly-mentor-action@v1.0.0-beta
+        uses: leeboydmerly/merly-mentor-action@v1.0.1-beta
         with:
           mm-key: ${{ secrets.MM_KEY }}
