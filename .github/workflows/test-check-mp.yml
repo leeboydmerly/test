@@ -6,7 +6,7 @@ on:
   push:
     branches:
       - main
-  # (optional) manual trigger
+  pull_request:
   workflow_dispatch:
 
 jobs:
