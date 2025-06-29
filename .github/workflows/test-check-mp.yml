@@ -1,4 +1,4 @@
-name: Merly Mentor Check
+name: Merly Mentor Check MP
 uses: your-org/merly-mentor-action@v1.0.0
 with:
   mm-key: ${{ secrets.MM_KEY }}
