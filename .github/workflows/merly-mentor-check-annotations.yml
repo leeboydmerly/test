@@ -1,7 +1,9 @@
-# File: .github/workflows/merly-mentor-check.yml
 name: Merly Mentor Check
 on:
   push:
+    branches:
+      - main
+  pull_request:
     branches:
       - main
 
@@ -26,9 +28,15 @@ jobs:
           curl -fsSL https://raw.githubusercontent.com/merly-ai/MPCC-Universal/main/install.sh \
             | bash -s -- -q -k "${MM_KEY}" install --staging
 
-      - name: Run MerlyMentor
+      - name: Run MerlyMentor and annotate
         timeout-minutes: 4
+        shell: bash
         run: |
           echo "::add-mask::${MM_KEY}"
           cd "${MM_INSTALL_DIR}"
-          ./MerlyMentor-Staging --github-actions -D "${GITHUB_WORKSPACE}" check
+
+          OUT=$(./MerlyMentor-Staging --github-actions -D "${GITHUB_WORKSPACE}" check 2>&1)
+          echo "$OUT"
+          echo "$OUT" \
+            | grep -E '^[[:space:]]*-[[:space:]]' \
+            | sed -E 's@^[[:space:]]*-[[:space:]]+([^:]+):([0-9]+):[0-9]+:.*@::warning file=\1,line=\2::&@'
