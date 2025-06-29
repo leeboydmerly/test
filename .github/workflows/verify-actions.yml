@@ -1,0 +1,16 @@
+# File: .github/workflows/verify-actions.yml
+name: Verify GitHub Actions
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Verify Actions are working
+        run: echo "✅ GitHub Actions are working on this repo!"
