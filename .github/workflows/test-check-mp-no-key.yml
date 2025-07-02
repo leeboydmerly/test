@@ -1,5 +1,5 @@
 # File: .github/workflows/test-check-mp.yml
-name: Test Merly Mentor Action
+name: Test Merly Mentor Action (no key)
 
 # Trigger on pushes to main (or whatever branch)
 on:
