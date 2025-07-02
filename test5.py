@@ -10,6 +10,8 @@ if b == c:
   print(b)
 if a == b and a == b and a == b:
   print(b)
+if a == c:
+  pass
 for _ in range(10):
         if np.all(b.c.d[:, :, :, : -1] > 240):
             f.g(20, True)
