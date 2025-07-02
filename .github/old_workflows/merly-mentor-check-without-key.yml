@@ -1,0 +1,32 @@
+# File: .github/workflows/merly-mentor-check.yml
+name: Merly Mentor Check No Key
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+jobs:
+  merly-check:
+    runs-on: ubuntu-latest
+    env:
+      MM_KEY: ${{ secrets.MM_KEY }}
+      MM_INSTALL_DIR: merly-install
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 2
+
+      - name: Install MPCC Universal (staging)
+        timeout-minutes: 10
+        run: |
+          mkdir -p "${MM_INSTALL_DIR}"
+          cd "${MM_INSTALL_DIR}"
+          curl -fsSL https://raw.githubusercontent.com/merly-ai/MPCC-Universal/main/install.sh \
+            | bash -s -- -q install --channel=Test
+
+      - name: Run MerlyMentor
+        timeout-minutes: 4
+        run: |
+          cd "${MM_INSTALL_DIR}"
+          ./MerlyMentor-Test --github-actions -D "${GITHUB_WORKSPACE}" check

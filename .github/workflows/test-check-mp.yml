@@ -6,7 +6,7 @@ on:
   push:
     branches:
       - main
-  # (optional) manual trigger
+  pull_request:
   workflow_dispatch:
 
 jobs:
@@ -15,8 +15,13 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
+        with:
+          fetch-depth: 2
+          path: testpath
 
       - name: Merly Mentor Check MP
-        uses: leeboydmerly/merly-mentor-action@v1.0.1-beta
+        uses: leeboydmerly/merly-mentor-action@v0.0.0-beta
         with:
           mm-key: ${{ secrets.MM_KEY }}
+          checkout-code: false
+          path: ${{github.workspace}}/testpath

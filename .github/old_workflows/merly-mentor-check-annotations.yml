@@ -1,11 +1,10 @@
+# File: .github/workflows/merly-mentor-check.yml
 name: Merly Mentor Check
 on:
   push:
     branches:
       - main
-  pull_request:
-    branches:
-      - main
+  pull_request:      # triggers on PRs into any branch
 
 jobs:
   merly-check:
@@ -13,6 +12,7 @@ jobs:
     env:
       MM_KEY: ${{ secrets.MM_KEY }}
       MM_INSTALL_DIR: merly-install
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
@@ -35,8 +35,8 @@ jobs:
           echo "::add-mask::${MM_KEY}"
           cd "${MM_INSTALL_DIR}"
 
+          # 1) capture all output
           OUT=$(./MerlyMentor-Staging --github-actions -D "${GITHUB_WORKSPACE}" check 2>&1)
+
+          # 2) echo raw for full context
           echo "$OUT"
-          echo "$OUT" \
-            | grep -E '^[[:space:]]*-[[:space:]]' \
-            | sed -E 's@^[[:space:]]*-[[:space:]]+([^:]+):([0-9]+):[0-9]+:.*@::warning file=\1,line=\2::&@'
