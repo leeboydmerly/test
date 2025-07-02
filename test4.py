@@ -15,6 +15,7 @@ if var2 == var3:
 
 if var1 == var2 and var1 == var2 and var1 == var2:
     print(var2)
+    print(var3)
 
 for _ in range(10):
     if np.all(var2.var3.var4[:, :, :, :-1] > 240):
