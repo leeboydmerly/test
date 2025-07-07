@@ -23,5 +23,6 @@ jobs:
         uses: leeboydmerly/merly-mentor-action@v0.0.2-beta
         with:
           mm-key: ${{ secrets.MM_KEY }}
-          checkout-code: f
+          checkout-code: false
+          debug: f
           path: ${{github.workspace}}/testpath
