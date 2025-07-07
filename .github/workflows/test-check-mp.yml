@@ -22,8 +22,7 @@ jobs:
       - name: Merly Mentor Check MP
         uses: leeboydmerly/merly-mentor-action@v0.0.10-beta
         with:
-          #mm-key: ${{ secrets.MM_KEY }}
-          mm-key: abcd-efg-hijk-lmno
+          mm-key: ${{ secrets.MM_KEY }}
           checkout-code: false
           debug: true
           path: ${{github.workspace}}/testpath
