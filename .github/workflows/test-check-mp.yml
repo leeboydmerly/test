@@ -20,7 +20,7 @@ jobs:
           path: testpath
 
       - name: Merly Mentor Check MP
-        uses: leeboydmerly/merly-mentor-action@v0.0.8-beta
+        uses: leeboydmerly/merly-mentor-action@v0.0.9-beta
         with:
           #mm-key: ${{ secrets.MM_KEY }}
           mm-key: abcd-efg-hijk-lmno
