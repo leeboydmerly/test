@@ -20,7 +20,7 @@ jobs:
           path: testpath
 
       - name: Merly Mentor Check MP
-        uses: leeboydmerly/merly-mentor-action@v0.0.12-beta
+        uses: leeboydmerly/merly-mentor-action@v0.0.10-beta
         with:
           mm-key: ${{ secrets.MM_KEY }}
           checkout-code: false
