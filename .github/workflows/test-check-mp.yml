@@ -24,4 +24,4 @@ jobs:
         with:
           mm-key: ${{ secrets.MM_KEY }}
           checkout-code: false
-          path: ${{github.workspace}}/testpath
+          path: ${{github.workspace}}
