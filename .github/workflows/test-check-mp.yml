@@ -20,9 +20,10 @@ jobs:
           path: testpath
 
       - name: Merly Mentor Check MP
-        uses: leeboydmerly/merly-mentor-action@v1.0.18-beta
+        uses: leeboydmerly/merly-mentor-action@v1.0.19-beta
         with:
           mm-key: ${{ secrets.MM_KEY }}
           checkout-code: false
           debug: true
           path: testpath
+          max_issues: 15
