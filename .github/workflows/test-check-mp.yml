@@ -26,7 +26,7 @@ jobs:
           checkout-code: false
           debug: true
           path: testpath
-          max-issues: 1
+          max-issues: 19
 
       - name: Test continuation
         shell: bash
