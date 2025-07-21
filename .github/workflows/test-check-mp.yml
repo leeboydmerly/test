@@ -26,4 +26,9 @@ jobs:
           checkout-code: false
           debug: true
           path: testpath
-          max-issues: 15
+          max-issues: 1
+
+      - name: Test continuation
+        shell: bash
+        run: |
+          echo "✅ If you see this message, the pipeline continued past the issue‐check step."
