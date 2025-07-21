@@ -26,4 +26,4 @@ jobs:
           checkout-code: false
           debug: true
           path: testpath
-          max_issues: 15
+          max-issues: 15
