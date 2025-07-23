@@ -27,7 +27,8 @@ jobs:
           debug: true
           path: testpath
           max-issue-count: 0
-          #max-issue-priority: Critical
+          max-issue-priority: Critical
+          docker-tag: v0.111
 
       - name: Test continuation
         shell: bash
