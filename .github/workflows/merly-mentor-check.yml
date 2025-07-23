@@ -24,11 +24,11 @@ jobs:
           mkdir -p "${MM_INSTALL_DIR}"
           cd "${MM_INSTALL_DIR}"
           curl -fsSL https://raw.githubusercontent.com/merly-ai/MPCC-Universal/main/install.sh \
-            | bash -s -- -q -k "${MM_KEY}" install --staging
+            | bash -s -- -q -k "${MM_KEY}" install --test
 
       - name: Run MerlyMentor
         timeout-minutes: 4
         run: |
           echo "::add-mask::${MM_KEY}"
           cd "${MM_INSTALL_DIR}"
-          ./MerlyMentor-Staging --github-actions -D "${GITHUB_WORKSPACE}" check
+          ./MerlyMentor-Test --github-actions -D "${GITHUB_WORKSPACE}" check
