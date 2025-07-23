@@ -20,13 +20,14 @@ jobs:
           path: testpath
 
       - name: Merly Mentor Check MP
-        uses: leeboydmerly/merly-mentor-action@v1.0.29-beta
+        uses: leeboydmerly/merly-mentor-action@v1.0.30-beta
         with:
           mm-key: ${{ secrets.MM_KEY }}
           checkout-code: false
           debug: true
           path: testpath
           fail-count: 2
+          fail-priority: 4
 
       - name: Test continuation
         shell: bash
