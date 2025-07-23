@@ -27,7 +27,7 @@ jobs:
           debug: true
           path: testpath
           fail-count: 0
-          fail-priority: 4
+          fail-priority: 1
 
       - name: Test continuation
         shell: bash
