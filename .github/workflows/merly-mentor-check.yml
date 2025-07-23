@@ -24,7 +24,7 @@ jobs:
           mkdir -p "${MM_INSTALL_DIR}"
           cd "${MM_INSTALL_DIR}"
           curl -fsSL https://raw.githubusercontent.com/merly-ai/MPCC-Universal/main/install.sh \
-            | bash -s -- -q -k "${MM_KEY}" install --test
+            | bash -s -- -q -k "${MM_KEY}" install --Testing
 
       - name: Run MerlyMentor
         timeout-minutes: 4
