@@ -1,0 +1,36 @@
+# File: .github/workflows/test-check-mp.yml
+name: Test Merly Mentor Action
+
+# Trigger on pushes to main (or whatever branch)
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  test-merly:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 2
+          path: testpath
+
+      - name: Merly Mentor Check MP
+        uses: merly-ai/mentor-action@v1
+        with:
+          mm-key: ${{ secrets.MM_KEY }}
+          checkout-code: false
+          debug: true
+          path: testpath
+          max-issue-count: 1
+          max-issue-priority: Critical
+          docker-tag: v0.112
+
+      - name: Test continuation
+        shell: bash
+        run: |
+          echo "✅ If you see this message, the pipeline continued past the issue‐check step."
