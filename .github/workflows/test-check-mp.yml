@@ -28,7 +28,7 @@ jobs:
           path: testpath
           max-issue-count: 0
           max-issue-priority: 0
-          docker-tag: v0.111
+          docker-tag: v0.112
 
       - name: Test continuation
         shell: bash
