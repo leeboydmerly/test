@@ -26,8 +26,8 @@ jobs:
           checkout-code: false
           debug: true
           path: testpath
-          max-issue-count: 2
-          max-issue-priority: 2
+          max-issue-count: 1
+          max-issue-priority: Critical
           docker-tag: v0.112
 
       - name: Test continuation
