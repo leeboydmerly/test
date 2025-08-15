@@ -24,9 +24,7 @@ int main()
 
     if (yo.z < 0)
     {
-        if (dir.iszero() || 
-            (dir.z > 0 && (d->type >= ENT_INANIMATE 
-                || below >= d->zmargin - (d->eyeheight + d->aboveeye) / 4.0f)))
+        if (yo.z < 0)
         {
             wall = vec(0, 0, -1);
             return false;
