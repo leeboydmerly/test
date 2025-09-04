@@ -27,7 +27,7 @@ jobs:
             | bash -s -- -q -k "${MM_KEY}" install --channel=Test
 
       - name: Run MerlyMentor
-        timeout-minutes: 4
+        timeout-minutes: 5
         run: |
           echo "::add-mask::${MM_KEY}"
           cd "${MM_INSTALL_DIR}"
