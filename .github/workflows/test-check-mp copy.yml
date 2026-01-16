@@ -20,15 +20,15 @@ jobs:
           path: testpath
 
       - name: Merly Mentor Check MP
-        uses: leeboydmerly/merly-mentor-action@v1.0.47-beta
+        uses: merly-ai/mentor-action@v1
         with:
           mm-key: ${{ secrets.MM_KEY }}
           checkout-code: false
           debug: true
           path: testpath
-          max-issue-count: 1
-          max-issue-priority: Critical
-          docker-tag: v0.112
+          max-issue-count: 0
+          max-issue-priority: Low
+          #docker-tag: v0.112
 
       - name: Test continuation
         shell: bash
