@@ -1,5 +1,5 @@
 # File: .github/workflows/merly-mentor-check.yml
-name: Merly Mentor Check With Key
+name: Merly Mentor Check No Key
 on:
   push:
     branches:
@@ -20,15 +20,13 @@ jobs:
       - name: Install MPCC Universal (staging)
         timeout-minutes: 10
         run: |
-          echo "::add-mask::${MM_KEY}"
           mkdir -p "${MM_INSTALL_DIR}"
           cd "${MM_INSTALL_DIR}"
           curl -fsSL https://raw.githubusercontent.com/merly-ai/MPCC-Universal/main/install.sh \
-            | bash -s -- -q -k "${MM_KEY}" install --channel=Test
+            | bash -s -- -q install --channel=Test
 
       - name: Run MerlyMentor
-        timeout-minutes: 5
+        timeout-minutes: 4
         run: |
-          echo "::add-mask::${MM_KEY}"
           cd "${MM_INSTALL_DIR}"
           ./MerlyMentor-Test --github-actions -D "${GITHUB_WORKSPACE}" check
